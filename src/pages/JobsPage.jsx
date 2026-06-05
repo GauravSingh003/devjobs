@@ -1,4 +1,8 @@
-import useFetchJobs from '../hooks/useFetchJobs'
+import JobCard from '../Components/JobCard';
+import useFetchJobs from '../hooks/useFetchJobs';
+import '../Components/JobCard.css'
+
+
 const JobsPage = () => {
     const {data, loading, errors} = useFetchJobs();
 
@@ -7,15 +11,12 @@ const JobsPage = () => {
 
     return (
         <>
-            <h1>JobsPage</h1>
-            {data.map((job) => (
-                <div key={job.id}>
-                    <h2>{job.title}</h2>
-                    <p>{job.company}</p>
-                    <p>{job.location}</p>
-                    <p>{job.salary}</p>
-                </div>
-            ))}
+            <div className="jobs-container">
+                <h1>Available Jobs</h1>
+                {data.map((job) => (
+                    <JobCard key={job.id} job={job} />
+                ))}
+            </div>
         </>
         )
 }

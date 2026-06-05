@@ -1,0 +1,40 @@
+.job-card{
+    background: white;
+    border: 12px;
+    padding: 20px;
+    margin: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.job-card h2{
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.job-card p{
+    color: #555;
+    margin: 4px 0;
+}
+.skills{
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.job-card button{
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    &:hover{
+        background: #4ecca3;
+        color: #1a1a2e;
+    }
+}
+.jobs-container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
