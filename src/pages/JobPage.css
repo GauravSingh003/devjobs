@@ -1,0 +1,28 @@
+.jobs-container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.filter{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.filter input{
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+}
+.filter input:focus{
+    border-color: #4ecca3;
+}
+.filter select{
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px solid red;                                 
+}

@@ -1,6 +1,19 @@
+import { useContext } from 'react'
 import './JobCard.css'
+import { BookmarkContext } from '../context/BookmarkContext'
 
-const JobCard = ({job}) => {
+const JobCard = ({ job }) => {
+  const {bookmarks, setBookmarks} = useContext(BookmarkContext);
+  const isBookmarks = bookmarks.some((b) => b.id === job.id);
+
+  const handleBookmark = () => {
+    if(isBookmarks){
+      setBookmarks(bookmarks.filter((b) => b.id !== job.id));
+    } else{
+      setBookmarks([...bookmarks, job])
+    }
+  }
+
   return (
     <div className='job-card'>
       <h2>{job.title}</h2>
@@ -11,10 +24,12 @@ const JobCard = ({job}) => {
 
       <div className="skills">
         {job.skills.map((skill, idx) => (
-            <span key={idx} className='skill-tag'>{skill}</span>
+          <span key={idx} className='skill-tag'>{skill}</span>
         ))}
       </div>
-      <button>View Details</button>
+      <button onClick={handleBookmark}>
+        {isBookmarks ? "Saved" : "Save Job"}
+      </button>
     </div>
   )
 }
