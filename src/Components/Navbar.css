@@ -15,7 +15,7 @@ nav ul{
     gap: 20px;
 }
 
-nav ul li{
+nav ul li Link{
     color: #FFFFFF;
     cursor: pointer;
     font-size: 16px;
