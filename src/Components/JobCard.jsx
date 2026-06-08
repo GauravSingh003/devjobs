@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import './JobCard.css'
 import { BookmarkContext } from '../context/BookmarkContext'
+import { Link } from 'react-router-dom';
 
 const JobCard = ({ job }) => {
   const {bookmarks, setBookmarks} = useContext(BookmarkContext);
@@ -27,9 +28,15 @@ const JobCard = ({ job }) => {
           <span key={idx} className='skill-tag'>{skill}</span>
         ))}
       </div>
+      <div className='btn'>
       <button onClick={handleBookmark}>
         {isBookmarks ? "Saved" : "Save Job"}
       </button>
+
+      <Link to={`/jobs/${job.id}`}>
+         <button>View Details</button>
+      </Link>
+      </div>
     </div>
   )
 }

@@ -28,10 +28,18 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    &:hover{
+}
+.btn{
+    display: flex;
+    gap: 20px;
+}
+.btn button:first-child:hover{
         background: #4ecca3;
         color: #1a1a2e;
-    }
+}
+.btn button:last-child:hover{
+        background: #f4f4;
+        color: #1a1a2e;
 }
 /* .jobs-container{
     max-width: 800px;
